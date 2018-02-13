@@ -12,6 +12,7 @@ public class GameActivity extends AppCompatActivity {
 
     private Button firstButton;
     private Button secondButton;
+    private Button playAgainButton;
     private int magicNumber;
     private TextView currentNumberTextView;
 
@@ -25,6 +26,7 @@ public class GameActivity extends AppCompatActivity {
     public void initNewGame() {
         firstButton = (Button) findViewById(R.id.first_button);
         secondButton = (Button) findViewById(R.id.second_button);
+        playAgainButton = (Button) findViewById(R.id.play_again_button);
         currentNumberTextView = (TextView) findViewById(R.id.current_number);
 
         magicNumber = getIntent().getIntExtra(MAGIC_NUMBER, 0);
@@ -41,11 +43,22 @@ public class GameActivity extends AppCompatActivity {
         currentNumberTextView.setText(String.valueOf(chosenNumber));
 
         if (chosenNumber < magicNumber) {
-
+            firstButton.setText(Integer.toString(chosenNumber+1));
+            if (chosenNumber < magicNumber-1) {
+                secondButton.setText(Integer.toString(chosenNumber+2));
+            }
+            else {
+                secondButton.setVisibility(View.INVISIBLE);
+            }
+        }
+        else {
+            firstButton.setVisibility(View.INVISIBLE);
+            secondButton.setVisibility(View.INVISIBLE);
+            playAgainButton.setVisibility(View.VISIBLE);
         }
     }
 
-
-//    TextView magicNumberTextView = (TextView) findViewById()
-
+    public void playAgain(View view) {
+        finish();
+    }
 }
