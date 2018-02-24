@@ -2,7 +2,6 @@ package com.jason.magicnumber;
 
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-import android.view.View;
 import android.widget.TextView;
 
 import org.junit.Rule;

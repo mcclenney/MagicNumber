@@ -24,13 +24,13 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void initNewGame() {
-        firstButton = (Button) findViewById(R.id.first_button);
-        secondButton = (Button) findViewById(R.id.second_button);
-        playAgainButton = (Button) findViewById(R.id.play_again_button);
-        currentNumberTextView = (TextView) findViewById(R.id.current_number);
+        firstButton = findViewById(R.id.first_button);
+        secondButton = findViewById(R.id.second_button);
+        playAgainButton = findViewById(R.id.play_again_button);
+        currentNumberTextView = findViewById(R.id.current_number);
 
         magicNumber = getIntent().getIntExtra(MAGIC_NUMBER, 0);
-        TextView magicNumberTextView = (TextView) findViewById(R.id.magic_number);
+        TextView magicNumberTextView = findViewById(R.id.magic_number);
 
         magicNumberTextView.setText(String.valueOf(magicNumber));
     }

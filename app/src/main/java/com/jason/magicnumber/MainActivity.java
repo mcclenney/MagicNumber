@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        newGameNumberTextView = (TextView) findViewById(R.id.new_game_number);
+        newGameNumberTextView = findViewById(R.id.new_game_number);
     }
 
     public void startNewGame(View view) {
